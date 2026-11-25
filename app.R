@@ -30,15 +30,45 @@ ui <- fluidPage(
             p("Explore the DIG Trial dataset using interactive visualisations and 
   summaries."),
             br(),
-            h4("About the Dataset"),
-            p("Information about the DIG Trial will appear here.")
-          ),
-          #Data tab
-          tabPanel(
-            "Data overview",
-             h2("Dataset Overview"),
-             p("Explore descriptive statistics for the DIG Trial variables."),
-            tableOutput("summary_table")
+ fluidRow(
+   column(
+     4,
+     wellPanel(
+            h4("Trial Particpants"),
+            h2("24"),
+            p("Total observations")
+          )
+     ),
+           column(
+             4,
+            wellPanel(
+             h4("Treatment Groups"),
+             h2("2"),
+             p("Comparison groups")
+      )
+    ),
+    column(
+      4,
+      wellPanel(
+        h4("Primary Outcome"),
+        h2("DIG"),
+        p("Trial outcome")
+      )
+    )
+ ),
+ br(),
+ h4("About the DIG Trial"),
+ p("Explore the trial design, participant characteristics and study outcomes.")
+ 
+
+   
+  
+   
+   
+             
+            
+            
+        
             
             
             
