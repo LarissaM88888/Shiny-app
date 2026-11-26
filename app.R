@@ -82,7 +82,27 @@ ui <- fluidPage(
           
           h4("About the DIG Trial"),
           
-          p("Explore the trial design, participant characteristics and study outcomes.")
+          p("The DIG Trial investigated the effects of digoxin in patients with heart
+            failure. Explore the participant characteristics, treatment allocations and
+            clinical outcomes recorded during the study."),
+          
+          br(),
+          
+          h3("Treatment Group Distribution"),
+          
+          p("Explore how particpants were allocated between the digoxin treatment and
+            placebo groups."),
+          
+          wellPanel(
+            h4("Treatment Alllocation"),
+            plotOutput("treatment_distribution_plot"),
+            p("A visual comparison of the treatment and placebo groups will be displayed
+          here."),
+          )
+            
+            
+
+          
           
         ),
         
@@ -120,7 +140,8 @@ ui <- fluidPage(
           
           p("A detailed view of the participant-level data will be displayed here."),
           
-          tableOutput("data_table"),
+          tableOutput("data_table")
+        ),
           #Participant Characteristics tab
           tabPanel(
             "Participant Characteristics",
@@ -209,7 +230,7 @@ ui <- fluidPage(
     
   )
   
-)
+
 
 
 # --------------------------------
