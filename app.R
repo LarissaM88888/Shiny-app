@@ -140,7 +140,30 @@ ui <- fluidPage(
             h3("Clincal Characteristics"),
             p("Explore baseline clinical characteristics of trial particpants.")
           ),
+          #Treatment comparison tab
+          tabPanel(
+            "Treatment Comparison",
             
+            h2("Treatment Group Comparison"),
+            
+            p("Explore differences between the treatment and placebo groups."),
+            
+            br(),
+            
+            h3("Group Characteristics"),
+            
+            p("Comparative summaries of the two treatment groups will be displayed
+              here."),
+            
+            br(),
+            
+            h3("Visual Comparisons"),
+            
+            p("Interactive charts comparing treatment groups will be displayed
+        here.")
+              ),
+          
+             
             
             
           
