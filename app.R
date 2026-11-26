@@ -1,4 +1,4 @@
-library(shiny)
+
 library(shiny)
 
 # --------------------------------
@@ -101,7 +101,12 @@ ui <- fluidPage(
           
           h3("Dataset Information"),
           
-          p("This section provides an overview of the DIG Trial data, including participant information and recorded variables."),
+          wellPanel(
+          h4("About the dataset"),
+          p("This dataset contains information colected as part of the DIG trial."),
+          p("It includes participant characteristics, treatment group allocation and
+            clinical outcones.")
+          ),
           
           br(),
           
@@ -115,7 +120,30 @@ ui <- fluidPage(
           
           p("A detailed view of the participant-level data will be displayed here."),
           
-          tableOutput("data_table")
+          tableOutput("data_table"),
+          #Participant Characteristics tab
+          tabPanel(
+            "Participant Characteristics",
+            h2("Participant Characteristics"),
+            
+            p("Explore the demographic and clinical characteristics of particpants
+      in the DIG Trial."),
+            
+            br(),
+            
+            h3("Demogaphic Characteristics"),
+            
+            p("Visualisations of participant demographics will be displayed here."),
+            
+            br(),
+            
+            h3("Clincal Characteristics"),
+            p("Explore baseline clinical characteristics of trial particpants.")
+          ),
+            
+            
+            
+          
           
         )
         
