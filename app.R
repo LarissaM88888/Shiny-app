@@ -162,6 +162,39 @@ ui <- fluidPage(
             p("Interactive charts comparing treatment groups will be displayed
         here.")
               ),
+          #Outcome and analysis tab
+          tabPanel(
+            "Outcomes & Analysis",
+            
+            h2("Clinical Outcomes"),
+            
+            p("Explore clinical outcomes recorded during the DIG trial."),
+            
+            br(),
+            
+            h3("Primary Outcome"),
+            
+            p("The primary endpoint will be presented here."),
+            
+            br(),
+            
+            h3("Secondary Outcomes"),
+            
+            p("Visualisations and summaries of secondary clinical outcomes will be
+      displayed here.")
+          )
+            
+          
+              
+              
+          
+            
+      
+              
+         
+            
+            
+          
           
              
             
