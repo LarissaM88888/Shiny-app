@@ -71,8 +71,8 @@ ui <- fluidPage(
               4,
               wellPanel(
                 h4("Primary Outcome"),
-                h2("DIG"),
-                p("Trial outcome")
+                h2("DWHF"),
+                p("Death or hospitalisation due to heart failure")
               )
             )
             
@@ -154,13 +154,27 @@ ui <- fluidPage(
             
             h3("Demogaphic Characteristics"),
             
-            p("Visualisations of participant demographics will be displayed here."),
+            wellPanel(
+              h4("Age Distribution"),
+              plotOutput("age_distribution_plot")
+            ),
             
             br(),
             
-            h3("Clincal Characteristics"),
-            p("Explore baseline clinical characteristics of trial particpants.")
+            h3("Clinical Characteristics"),
+            
+            wellPanel(
+              h4("Baseline Clinical Characteristics"),
+              plotOutput("clinical_charcteristics_plot")
+            )
           ),
+              
+            
+            
+      
+            
+          
+         
           #Treatment comparison tab
           tabPanel(
             "Treatment Comparison",
@@ -173,37 +187,53 @@ ui <- fluidPage(
             
             h3("Group Characteristics"),
             
-            p("Comparative summaries of the two treatment groups will be displayed
-              here."),
+            wellPanel(
+              h4("Age by Treatment Group"),
+              plotOutput("age_group_plot")
+            ),
             
             br(),
             
-            h3("Visual Comparisons"),
+            h3("Clinical Comparisons"),
             
-            p("Interactive charts comparing treatment groups will be displayed
-        here.")
-              ),
+            wellPanel(
+              h4("Baseline Clinical Characteristics by Group"),
+              plotOutput("clinical_group_plot")
+            )
+          ),
+          
+            
+           
           #Outcome and analysis tab
-          tabPanel(
-            "Outcomes & Analysis",
-            
-            h2("Clinical Outcomes"),
-            
-            p("Explore clinical outcomes recorded during the DIG trial."),
-            
-            br(),
-            
+        tabPanel(
+          "Outcome & Analysis",
+          
+          h2("Clinical Outcomes"),
+          
+          p("Explore clinical outcomes recorded during the DIG trial."),
+          
+          br(),
+        
+        
             h3("Primary Outcome"),
             
-            p("The primary endpoint will be presented here."),
-            
+        
+            wellPanel(
+              h4("Death or Hospitalisation Due to Heart Failure (DWHF) "),
+              plotOutput("primary_outcome_plot")
+            ),
+    
+  
             br(),
             
             h3("Secondary Outcomes"),
             
-            p("Visualisations and summaries of secondary clinical outcomes will be
-      displayed here.")
-          )
+            wellPanel(
+              h4("Secondary Clinical Outcomes"),
+              plotOutput("secondary_outcomes_plot")
+            )
+        )
+      
             
           
               
