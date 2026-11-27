@@ -24,9 +24,19 @@ ui <- fluidPage(
       
       h4("Filters"),
       
-      helpText("Data filters will be added here.")
-      
+      selectInput(
+        "treatment_filter",
+         "Treatment Group",
+        choices = c(
+          "All Groups",
+          "Placebo",
+          "Digoxin"
+        ),
+        selected = "All Groups"
+      )
     ),
+      
+     
     
     # MAIN DASHBOARD
     mainPanel(
@@ -53,8 +63,8 @@ ui <- fluidPage(
               4,
               wellPanel(
                 h4("Trial Participants"),
-                h2("24"),
-                p("Total observations")
+                h2("6,800"),
+                p("Total participants")
               )
             ),
             
@@ -63,7 +73,8 @@ ui <- fluidPage(
               wellPanel(
                 h4("Treatment Groups"),
                 h2("2"),
-                p("Comparison groups")
+                p("Placebo: 3,403"),
+                p("Digoxin: 3,397")
               )
             ),
             
@@ -96,8 +107,12 @@ ui <- fluidPage(
           wellPanel(
             h4("Treatment Alllocation"),
             plotOutput("treatment_distribution_plot"),
-            p("A visual comparison of the treatment and placebo groups will be displayed
-          here."),
+            p("Placebo: 3,403 participants (50.04%)"),
+            
+            p("Digoxin: 3,397 participants (49.96%)"),
+            
+            p("The two treatment groups contain approximately equal numbers
+              of participants.")
           )
             
             
