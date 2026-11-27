@@ -33,7 +33,18 @@ ui <- fluidPage(
           "Digoxin"
         ),
         selected = "All Groups"
-      )
+      ),
+      selectInput(
+        "sex_filter",
+        "Sex",
+        choices = c(
+          "All",
+          "Male",
+          "Female"
+        ),
+        selected = "All"
+      ) 
+       
     ),
       
      
